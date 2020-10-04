@@ -1,5 +1,5 @@
-function capitalize_Words(args) {
-  let cutsArray = args.split(" ");
-}
+let reverse = (args) => {
+  return args.split(" ").reverse().join(" ");
+};
 
-console.log(capitalize_Words("js string exercises"));
+console.log(reverse("Moon to Sun And Galaxy"));

@@ -1,0 +1,30 @@
+1. Push()               Adds one or multiple elements at end of array, method returns new length of array
+2. Pop()                Removes last element of array and returns removed elements value
+3. Unshift()            Adds one or Multiple elements at start of an array, returns new length of array
+4. Shift()              Removes first element of array and returns removed elements value
+5. IndexOf()            Finds Index of searchItem passed
+6. splice()             accepts 2 args, (indexfrom, numberOfItems); || Returns removed items
+                        a.splice(2, 0, 4, 5, 6, 7) // first : from index to splice || 2nd number of iteams to splice, ... all others to be added at given place
+
+7. slice()              accepts 2 args, (indexfrom, indexTo); || Returns removed items    
+8. concat()             concats 2 or more arrays into one myArray.concat(array2,array3,...,n)
+9. every() / some()     every() method checks if all elements in an array pass a test (provided as a function). Returns Boolean 
+10. toString()          Converts Arrya to String with COMMA ,    
+11. Filter()            array.filter(function(currentValue, index, arr), thisValue)
+12. find()              returns the value of the first element in the provided array || array1.find(element => element > 10); Or returns undefined 
+13. findIndex()         returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1
+14. includes()          determines whether an array includes a certain value among its entries, returning true or false
+15. Join()              method creates and returns a new string by concatenating all of the elements in an array || Accepts args
+16. LastIndexOf()       arr.lastIndexOf(searchElement[, fromIndex]) || Searches from backword direction
+17. map()               creates a new array populated with the results of calling a provided function on every element in the calling array || let new_array = arr.map(function callback( currentValue[, index[, array]]) {})
+
+18. Array.reduce()      Reduces numeric arrya to single digit
+19. reverse()           reverse is destructive -- it changes the original array.
+20. flat                converts multiple array in array to single level array arr1.flat(1)
+
+Loop
+
+1. Array.forEach((item, index) => {             
+    console.log(item)
+});
+                                        Has access to 3 elements, 1. Item, 2. Index of item, 3. Array
