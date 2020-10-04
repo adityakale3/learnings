@@ -1,0 +1,24 @@
+1. Includes()   // Case Sensative, returns boolean   
+                // "aNewString".includes("w", 6)); // Accepts search word and index to search from
+
+2. IndexOf() || lastIndexOf() // Returns Index or -1
+
+3. padEnd() || padStart() // str3.padEnd(100, ".") // returns string with length mentioned, by adding, space or mentioned character
+                          // "2".padStart(2, "0")  // Adds at padStart
+
+4. Repeat()     // repeats string for count // 'abc'.repeat(2)
+
+5. Replace()    // str.replace("dog", "cat")
+
+6. Slice()      // str.slice(10); // Returns Everything after the index
+                // str.slice(10, -3); // Returns Everything in between the index, skipping 1st
+
+7. Split()      // str.split(" "); // Returns an array of strings populated by splitting the calling string at occurences of the substring
+                // str.split(" ", 5)); // Returns limited number of splits
+
+8. .substr      // str.substr("10"); // returns NEW STRING, Everything after the index
+                // str.substr("10", 10); // returns Everything after the index , with limit set
+
+9. .substring   // Same as substr but accepts (from, to) WHERE as substr (from, length)
+
+10.

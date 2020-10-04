@@ -1,0 +1,12 @@
+OOPS :
+
+Encapsulation		// Least Parameters			|| Group many things in one, reduce complexity + increase reusability
+Abstraction			// Show only IO/ Endpoints  || Reduca complexity + isolate impact of changes
+Inheritance
+Polymorphism		// Refactor Ugly switch / case statements 
+
+
+Objects :
+
+Factory Function
+Constructor Function // using this keyword and NEW keyword
