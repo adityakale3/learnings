@@ -1,0 +1,66 @@
+1. Object.assign(target, source)        Returns modified Target || Object.assign({}, obj1);
+                                        Clone multi level object let obj3 = JSON.parse(JSON.stringify(obj1));
+2. Object.create(person);               Works same as ```= new person ```                                    
+3. Object.defineProperty()              accepts 3 params. 1. Object to work with, 2. Property name, 3. Property Value
+                                        Object.defineProperty(o, 'a', {
+                                                                value: 37,
+                                                                writable: true,
+                                                                enumerable: true,
+                                                                configurable: true
+                                                            });
+4. Object.defineProperties()            Object.defineProperties(object1, {
+                                                                    property1: {
+                                                                        value: 42,
+                                                                        writable: true
+                                                                    },
+                                                                    property2: {}
+                                                                });
+5. Object.entries(obj)                  const obj = { foo: 'bar', baz: 42 };
+                                        console.log(Object.entries(obj)); // [ ['foo', 'bar'], ['baz', 42] ]
+                                        // Gives out array of key,value pair
+
+                                        can be used with forEach 
+                                        for (const [key, value] of Object.entries(obj)) {
+                                             console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
+                                        }
+
+6. Object.freeze()                      A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties        
+   Object.isFrozen()                    from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values   of                                   existing properties from being changed.
+7. Object.fromEntries()                 transforms a list of key-value pairs into an object.
+                                        const entries = new Map([
+                                                                ['foo', 'bar'],
+                                                                ['baz', 42]
+                                                                ]);
+
+                                         const obj = Object.fromEntries(entries);
+                                         Object { foo: "bar", baz: 42 }
+8. Object.getOwnPropertyDescriptor      o = { get foo() { return 17; } };
+                                                    d = Object.getOwnPropertyDescriptor(o, 'foo');
+                                                    // d is {
+                                                    //   configurable: true,
+                                                    //   enumerable: true,
+                                                    //   get: /*the getter function*/,
+                                                    //   set: undefined
+                                            // } 
+
+9. Object.getOwnPropertyNames()         returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly in a given object.
+                                                            const object1 = {
+                                                                a: 1,
+                                                                b: 2,
+                                                                c: 3
+                                                            };
+
+                                                            console.log(Object.getOwnPropertyNames(object1));
+                                                            // expected output: Array ["a", "b", "c"] 
+10. Object.isExtensible()
+    Object.preventExtensions(object1);  // Checks if more value can be added or not, and can be prevent from extnsions
+
+
+11. Object.keys()                       // returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
+12. Object.values()                     // Returns on values Array
+
+                    Add new     Remove existing     Change existing
+Seal                  ❌                ❌              ✔️
+freeze                ❌                ❌              ❌
+preventExtensions     ❌                ✔️              ✔️
+

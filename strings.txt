@@ -20,5 +20,3 @@
                 // str.substr("10", 10); // returns Everything after the index , with limit set
 
 9. .substring   // Same as substr but accepts (from, to) WHERE as substr (from, length)
-
-10.
