@@ -83,3 +83,20 @@ myFunction();
 let newArr = ["i20", "wego", "hudibaba", "vespa", "Eco-sports"];
 newArr.splice(2, 1, "Shine", "Creata", "Swift");
 console.log("Result:::::::", newArr);
+
+console.log("+++++++++++++++++++++++++++++++++++++++++");
+let arrNumbMax = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+Array.prototype.max = function () {
+  return Math.max.apply(null, this);
+};
+
+Array.prototype.min = function () {
+  return Math.min.apply(null, this);
+};
+
+console.log(arrNumbMax.max());
+
+console.log(Math.max(null, arrNumbMax));
+
+console.log("Aditya");
