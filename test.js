@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 let fetchToDos = async () => {
-  let response = await fetch("https://jsonplaceholder.typicode.com/todos/10");
+  let response = await fetch("https://jsonplaceholder.typicode.com/todos/");
   let finalData = await response.json();
 
   console.log("Inseid", finalData);

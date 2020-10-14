@@ -1,0 +1,38 @@
+1.   /aditya/               Matches exact keyword
+2.   /[abc]ditya/           Matches ans one word among abc has 1st char and must have all outside bracket      
+3.   /[^bcd]ditya/          Excludes everything in ^ char set
+4.   /[a-z]ditya/           Matches ranges in char Set
+5.   /[a-zA-Z]aditya/       Match both lower and upper case
+6.   /[0-9]+/               + denotes one or unlimited times repeat
+7.   /[0-9]{11}/            {11} denotes length of char set to be applied
+8.   /[0-9]{5,8}/           {5, 8} denotes length of char set to be applied in range
+9.   /[0-9]{5,}/            {5,} At least 5 char long
+
+
+
+
+
+i = Case Insensative            || By default its case sensative
+g = Matches all occurance       || By default matches fisrt occurance
+
+\d = Eq of [0-9]                || Matches any digits
+\w = Eq of [a-zA-Z0-9_]         || Matches all Chars and _ (underscores)
+\s = Eq of Spaces , whiteSpaces || [\r\n\t\f\v]
+\t = Eq of tabs                 || Matches intends
+
+
+'+'   = one or more
+'\'   = escape char
+'[]'  = Character Set 
+'[^]' = Negative symbol in char set
+'?'   = Zero or one qunatifier (makes preceding char optional) || OPTIONAL
+'.'   = Any Char whatsoever (except new line char)
+'*'   = 0 or more quantifier (similar like +)
+'^'   = Outside char set denotes START of string
+'$'   = Denotes end of string
+'|'   = OR          ex. p|tyre = will match p or tyre
+'()'  = group       ex. (p|t)yre = will match pyre or tyre
+
+
+// test it like this
+// RegExPattern.test("StringTotest")
