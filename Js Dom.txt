@@ -1,0 +1,45 @@
+1. document.getElementById('IdName');
+2. document.getElementsByClassName('className');        = Returns HTML Collection  var elements[0]
+3. document.getElementByTagName('li');                  = Returns HTML Collection
+4. document.querySelector('#wrapper')                   = document.querySelector('#books li:nth-child(2) .name')    
+5. document.querySelectorAll('#wrapper')                = Returns Node List || Returns all occurance || Array methods work  
+
+    Convert HTML Collection into Array
+    let array = Array.from(HTMLCollection);
+
+6. element.parentElement                                = gives parentElement
+   element.children                                     = gives Children Element
+   ParentElement.removeChild('ChildElement')            = Removes Element from DOM
+
+7. element.addEventListener('click', (e) => {})     
+
+8. document.forms['add-emp'];                           = add-emp.addEventListener('submit', (e) => {
+                                                            e.preventDefault;
+                                                            add-emp.querySelector('input[type="text"]').value;
+                                                            })
+9. Create new Elements                                  // create elements
+                                                            const value = addForm.querySelector('input[type="text"]').value;
+                                                            const li = document.createElement('li');
+                                                            const bookName = document.createElement('span');
+                                                            const deleteBtn = document.createElement('span');
+
+                                                            // add text content
+                                                            bookName.textContent = value;
+                                                            deleteBtn.textContent = 'delete';
+
+                                                            // append to DOM
+                                                            li.appendChild(bookName);
+                                                            li.appendChild(deleteBtn);
+                                                            list.appendChild(li);
+                                                            //list.insertBefore(li, list.querySelector('li:first-child'));
+
+10. Get Class Name Element.className                    = Gives out class name
+11. Element.classList                                   = List of class in array
+  Element.classList.add('delete');
+  Element.classList.add('remove');
+                   contains(class);
+
+
+12. Element.getAttribute('href');
+    Element.hasAttribute('href');
+    Element.setAttribute('href', 'https://google.com');
