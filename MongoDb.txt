@@ -1,0 +1,137 @@
+// Connection
+
+// require
+const mongoose = require('mongoose');
+
+// connect 
+mongoose.connect('mongodb://localhost:27017/DBName',  {useNewUrlParser:true,useUnifiedTopology: true});
+
+// Schema
+var userSchema = new mongoose.Schema({
+    name: String,
+    email : String,
+    etype : String,
+    hourlyrate : Number,
+    totalHrs : Number
+});
+
+// schema in mongoose model
+var userModel = mongoose.model('Users',userSchema, 'Users');
+
+// export for use
+module.exports = userModel;
+
+
+
+// Test, Debugging
+var conn = mongoose.connection;
+
+conn.on('connection', () => {
+    console.log('DB Connected');
+});
+
+conn.on('disconnection', () => {
+    console.log('DB Dis-connected');
+});
+
+conn.on('error', console.error.bind(console,'connection error:'));
+
+conn.once('open', () => {
+    userModel.save((err,res)=> {
+        if(err) throw error;
+        console.log(res);
+        conn.close();
+    })
+});
+
+
+
+// Add Data
+
+var addUser = new userModel({
+        name : req.body.name,
+        email : req.body.email,
+    });   
+addUser.save((err,res1) => {
+    if(err) throw err;
+    res.send('User Added Successfully');
+});
+
+
+// Read
+var findUser = userModel.find({}, (err,data) => { /* Code here */ });
+
+Update
+
+
+
+
+
+db.purchase_orders.insertMany([{product: "pizza", total: 8.50, customer: "Karen"},{product: "toothbrush", total: 4.75, customer: "Karen"},{product: "pizza", total: 4.75, customer: "Dave"}{product: "toothbrush", total: 4.75, customer: "Mike"}])
+
+
+
+
+
+// FIND 
+db.createCollection('posts')
+db.posts.find()
+db.posts.find().sort({ title: 1 }).pretty()     | # asc
+db.posts.find().sort({ title: -1 }).pretty()    | # desc
+db.posts.find().count({key:value})              | Count
+db.posts.find({ category: 'news' }).count()     | Count
+db.posts.find().distinct(key)                   | Distinct
+db.posts.find().limit(2).pretty()               | Limit
+db.posts.find().limit(2).sort({ title: 1 }).pretty() | Limit and sort
+db.posts.findOne({ category: 'News' })          | Find One
+
+db.posts.find({ title: 'Post One' }, {
+  title: 1,
+  author: 1
+})                                              | Find Specific field
+
+db.posts.update({ title: 'Post Two' },          | Update Row   | First Element to search, second data to replace
+{
+  title: 'Post Two',
+  body: 'New body for post 2',
+  date: Date()
+},
+{
+  upsert: true
+})
+
+
+db.posts.update({ title: 'Post Two' },          | Update Specific Field 
+{
+  $set: {
+    body: 'Body for post 2',
+    category: 'Technology'
+  }
+})
+
+
+db.posts.update({ title: 'Post Two' },          | Rename Field
+{
+  $rename: {
+    likes: 'views'
+  }
+})
+
+db.posts.remove({ title: 'Post Four' })         | Remove Row
+
+$gt / $gte  | greater than / greater than equals  |     db.ships.find({class:{$gt:’P'}
+$lt / $lte  | lesser than / lesser than equals    |     db.ships.find({class:{$lte:’P'}
+$exists     | does an attribute exist or not      |     db.ships.find({type:{$exists:true}})
+$regex      | Perl-style pattern matching         |     db.ships.find({name:{$regex:’^USS\\sE’}})
+$type       | search by type of an element        |     db.ships.find({name : {$type:2}})
+
+String      2
+Array       4
+Binary Data 5
+Date        9
+
+
+db.purchase_orders.aggregate([
+    {
+        $match: {product:{$in:["Milk","toothbrush"]}}
+    },{$group: {_id: "$customer", total: { $sum: "$total"}}}]) 
